@@ -55,7 +55,7 @@ export function Calculator() {
       setExpression(result.toString());
       emitfunc(expression + " = " + result);
     } catch (e) {
-      setExpression("error")
+      setExpression("")
       emitfunc(expression + "-> Invalid Input");
     }
   };
