@@ -28,6 +28,18 @@ export function Calculator() {
     setCalcLog([...calcLog, exp]);
   };
 
+  const calculate = () => {
+    try {
+     console.log(expression);
+      const result = eval(expression) | "";
+      setExpression(result.toString());
+      emitfunc(expression + " = " + result);
+    } catch (e) {
+      setExpression("")
+      emitfunc(expression + "-> Invalid Input");
+    }
+  };
+
   const CalcEventClick = event => {
     switch (event) {
       case "c":
@@ -47,19 +59,7 @@ export function Calculator() {
         break;
     }
   };
-
-  const calculate = () => {
-    try {
-     console.log(expression);
-      const result = eval(expression) | "";
-      setExpression(result.toString());
-      emitfunc(expression + " = " + result);
-    } catch (e) {
-      setExpression("")
-      emitfunc(expression + "-> Invalid Input");
-    }
-  };
-
+  
   return (
     <div>
       <div className="flex-container">
