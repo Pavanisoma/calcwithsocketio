@@ -34,9 +34,9 @@ export function Calculator() {
         setExpression(expression.slice(0, -1));
         break;
 
-      // case "d":
-      //   setExpression("");
-      //   break;
+      case "d":
+        setExpression("");
+        break;
 
       case "=":
         calculate();
@@ -50,14 +50,13 @@ export function Calculator() {
 
   const calculate = () => {
     try {
-     //eslint-disable-next-line no-eval
      console.log(expression);
       const result = eval(expression) | "";
       setExpression(result.toString());
       emitfunc(expression + " = " + result);
     } catch (e) {
       setExpression("error")
-      emitfunc(expression + e);
+      emitfunc(expression + "-> Invalid Input");
     }
   };
 
@@ -156,16 +155,16 @@ export function Calculator() {
                 </td>
               </tr>
               <tr>
-                {/* <td
-                  colSpan={3}
-                  style={{ width: "190px" }}
+                <td
                   className="button button-cancel"
                   onClick={() => CalcEventClick("d")}
                   id="buttonDel"
                 >
                   Del
-                </td> */}
+                </td>
                 <td
+                  colSpan={3}
+                  style={{ width: "190px" }}
                   className="button button-operator"
                   onClick={() => CalcEventClick("=")}
                   id="buttonEqual"
