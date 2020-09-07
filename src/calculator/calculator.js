@@ -4,7 +4,7 @@ import "./calculator.css";
 
 
 //const socket = io("http://localhost:8000");
-var socket = io.connect('http://localhost:8000', {reconnect: true});
+var socket = io.connect('http://127.0.0.1:8000', {reconnect: true});
 export function Calculator() {  
   const [calcLog, setCalcLog] = useState([]);
   const [expression, setExpression] = useState("");
