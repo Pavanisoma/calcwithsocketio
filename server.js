@@ -12,8 +12,6 @@ const path = require('path');
     res.sendFile(path.join(__dirname+ '/build/index.html'));
   });
 
-
-
 io.on("connection", client => {
   client.on("subscribeToLogs", calculation => {
     console.log("client is subscribing to get logs of calculator");
@@ -31,4 +29,5 @@ http.listen(port, '0.0.0.0', function () {
   console.log('listening');
 });
 
+//io.listen(port);
 console.log("listening on port ", port);
