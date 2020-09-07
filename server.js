@@ -25,9 +25,9 @@ const allowedOrigins = "*:*";;
 
 const port = Number(process.env.PORT) || 8000;
 io.origins('*:*');
-http.listen(port, '0.0.0.0', function () {
-  console.log('listening');
-});
+// http.listen(port, '0.0.0.0', function () {
+//   console.log('listening');
+// });
 
-//io.listen(port);
+io.listen(port);
 console.log("listening on port ", port);
