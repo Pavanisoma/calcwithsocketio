@@ -16,7 +16,7 @@ io.on("connection", client => {
   client.on("subscribeToLogs", calculation => {
     console.log("client is subscribing to get logs of calculator");
     console.log(calculation);
-    io.emit("calculation", calculation);
+    client.broadcast.emit("calculation", calculation);
   });
   
 });
